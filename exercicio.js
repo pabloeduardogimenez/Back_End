@@ -22,6 +22,17 @@ let a = 4 ;
 let b = 3 ;
 let c = 2 ;
 
+let delta = ((4*a) *c);
+
+    if (a == 0 ){
+    console.log(" a equação não é do segundo grau e o programa");
+    } else if ( delta  < 0 ) {
+    console.log( "a equação possui apenas uma raiz real");
+    } else if ( delta > 0) {
+        console.log( "a equação possui duas raiz reais");
+    }
+
+
 
 
 
