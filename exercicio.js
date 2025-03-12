@@ -18,7 +18,9 @@ letra("V");
 letra("N");
 
 function raízes ( a, b , c){
+    int 
+
     if ( a == 0 ){
-                
+
     }
 }
