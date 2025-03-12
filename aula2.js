@@ -33,14 +33,14 @@ while ( ini_r >= fim_r) {
 // ordenação
 
 console.log("--- sort-- ");
-alunos.sort();
+
 let fim_f = alunos.length -1 ; // alunos.length -1 
 
+alunos.sort();
 
-
-for (let ini = 0 ; ini <= fim_f ; ini= ini + 1);
+for (let ini = 0 ; ini <= fim_f ; ini = ini + 1);
 {
-    console.log(alunos[ini]);
+    //console.log(alunos[ini]);
 }
 
 //forEach
