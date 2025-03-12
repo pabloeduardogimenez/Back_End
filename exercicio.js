@@ -27,7 +27,8 @@ let c = 2 ;
 
 function raízes ( a, b , c){
 
-    let valor1 = (-b + Math.sqrt((4*a) *c ))/2*a;
+    let valor1 = (-b - Math.sqrt((4*a) *c ))/2*a;
+    let valor2 = (+b + Math.sqrt((4*a) *c ))/2*a;
     
 
     
