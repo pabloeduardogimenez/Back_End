@@ -47,3 +47,5 @@ console.log(biq3);
 biq1.escrever(" oi Turma");
 biq3.escrever(" oi Turma");
 
+// 44/44/4444
+
