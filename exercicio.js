@@ -33,14 +33,15 @@ let delta = ((4*a) *c);
     }
 
 
-
-
-
-function raízes ( a, b , c){
+function raízes ( a,b,c){
 
     let valor1 = (-b - Math.sqrt((4*a) *c ))/2*a;
     let valor2 = (+b + Math.sqrt((4*a) *c ))/2*a;
-    
+    let valor3 = valor1 + valor2;
 
+    console.log(valor1);
+    console.log(valor2);
     
 }
+
+raízes(3,6,9);  
