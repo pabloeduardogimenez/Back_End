@@ -16,7 +16,7 @@ function VerParImp(n) {
 
 process.stdin.on("data", function (valor) {
 
-    let numero = Number.parseInt(valor);
+    let numero = Number.parseFloat(valor);
 
    
     if(Number.isInteger(numero) == false)  {
@@ -29,7 +29,7 @@ process.stdin.on("data", function (valor) {
 
     
  
-    if (lista.length >= 20){           
+    if (lista.length >= 5){           
           
             console.log("quantidade maxima é 20 números;");
 
