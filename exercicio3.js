@@ -18,22 +18,20 @@ process.stdin.on('data', function(valor){
 
     if (resto > 0 )
     {
-        valor = resto;
-        cinq = parseInt(valor / 50);
+        cinq = parseInt(resto / 50);
         resto = valor % 50;
         
         if (resto > 10){
-            dez = parseInt(valor/ 10);
+            dez = parseInt(resto/ 10);
             resto = valor % 10;
 
         }
-        if (resto > 5){
-            valor =  resto - valor;
-            cinco = parseInt(valor / 5);
+        if (resto > 5){            
+            cinco = parseInt(resto / 5);
             resto = valor % 5;
         }
         if ( resto >= 1){
-            um = parseInt(valor / 1);
+            um = parseInt(resto / 1);
         }     
         
     }
@@ -41,6 +39,6 @@ process.stdin.on('data', function(valor){
     console.log(cinq +" notas de 50 " );
     console.log(dez +" notas de 10 ");
     console.log(cinco +" notas de 5 ");
-    console.log(um + "notas de 1");
+    console.log(um + " notas de 1");
     
 });

@@ -18,21 +18,6 @@ process.stdin.on('data', function(valor){
         console.log("data possuir mês maior que 12." + data );
     } 
     console.log(data);
-   /* let dia = data.slice(0,2);
-    let mes = data.slice(3,2);
-    
 
-    if (data == "" || regex_data.test(data) == false){
-                console.log("data invalida");
-               process.exit(); 
-    } else if (dia  > 31 ) 
-        {
-            console.log("data possuir dia maior que 31 dias. " + data );
-        } else if (mes  > 12 ) {
-            console.log("data possuir mês maior que 12." + data );
-    } 
-    else {
-        console.log("data é valida. " + data );
-    }*/
     
 });
