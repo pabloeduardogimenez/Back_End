@@ -3,7 +3,9 @@ let aluno = " Pedro";
 let alunos = ["Pedro", "Ana", "João", 123];
 
 
-alunos.push("Mario");
+alunos.push(5);
+alunos.push(6);
+alunos.push(7);
 
 alunos[3] = "maria";
 
@@ -51,3 +53,26 @@ console.log("--- foreach-- ");
 alunos.forEach(function(item){
     console.log(item);
 });
+
+let listaPar = [];
+let listaImp = [];   
+        
+
+function VerParImp(n) {
+    if (n & 1 == 1) {
+        
+        return listaPar.push(n);
+
+    } else{
+        
+        return listaImp.push(n);
+    }
+    
+}
+console.log(VerParImp(12) + " 12");
+console.log(VerParImp(121) + " 121");
+console.log(VerParImp(12) + " 12");
+console.log(VerParImp(121) + " 121");
+console.log(VerParImp(121)+ " 121");
+console.log(listaPar.length);
+console.log(listaImp.length);
