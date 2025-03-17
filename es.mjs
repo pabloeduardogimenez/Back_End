@@ -9,7 +9,7 @@ let soma = function(a,b) {
     return a + b ;
 }
 // arrow function
-let mult = (a,b) => a+b;
+export let mult = (a,b) => a+b;
 
 export function abc(n1,n2){
 
@@ -46,10 +46,10 @@ export let pessoa = {
     idade: 23,
     peso: 45.3
 }
-let maria = pesoa.nome;
-console.log(maria, pesoa);
+let maria = pessoa.nome;
+console.log(maria, pessoa);
 let {nome, idade} = pessoa;
 nome = "joao";
 console.log(nome, idade);
 
-export default pessoa;
+

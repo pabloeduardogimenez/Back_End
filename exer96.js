@@ -16,23 +16,16 @@ function VerParImp(n) {
 
 process.stdin.on("data", function (valor) {
 
-    let numero = Number.parseFloat(valor);
-
-   
+    let numero = Number.parseFloat(valor);   
     if(Number.isInteger(numero) == false)  {
         console.log("Digite somente números interios.");  
         process.exit(); 
-    }
-   
+    }   
      lista.push(numero);
      VerParImp(numero);
 
-    
- 
-    if (lista.length >= 5){           
-          
+    if (lista.length >= 5){                 
             console.log("quantidade maxima é 20 números;");
-
             console.log("Lista de númros pares: ");            
             listaPar.forEach(function(item){
                 console.log(item);
