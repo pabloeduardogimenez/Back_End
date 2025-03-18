@@ -29,6 +29,3 @@ if (idade >= 65){
     console.log("criança");
 };
 
-if (cidade = "curitiba" ){
-    console.log("verdadeiro");
-};
