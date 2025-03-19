@@ -9,7 +9,7 @@ async function teste()
 }
 
 teste();
-
+/*
 
 async function teste1()
 {

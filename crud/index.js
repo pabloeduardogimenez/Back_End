@@ -39,9 +39,18 @@ export async function cadastrar(nome,email,cidade,telefone,idade)
             + cidade +' , '
             + idade + ' , '
             + telefone + ' )';*/
-    const db = await conexao();
-    
-     let returno = await db.run(sql, nome, cidade, email, idade, telefone);
+        try {
+          const db = await conexao();    
+          let returno = await db.run(sql, nome, cidade, email, idade, telefone);
+          return (returno.changes ==1)? true : false;
+
+        } catch (erro)
+        {
+          console.log("erro na banco de dados")
+          //console.log(erro);
+          return false;
+        }
+  
 
     /*if (returno.changes == 1){
       return true;
@@ -50,7 +59,7 @@ export async function cadastrar(nome,email,cidade,telefone,idade)
     {
       return false;
     }*/
-    return (returno.changes ==1)? true : false;
+    
 
 
 }
