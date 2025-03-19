@@ -1,17 +1,17 @@
-import { listar, pesquisar } from "./index.js";
+import { listar, pesquisar , cadastrar} from "./index.js";
 
-/*ync function teste()
+async function teste()
 {
 
-    let res = await listar();
+    let res = await cadastrar("pablo", "aa", "Rio janeiro", "14-12258-2589",12);
     
     console.log(res);
 }
 
 teste();
-*/
 
-async function teste()
+
+async function teste1()
 {
 
     let res = await pesquisar(5);
@@ -19,4 +19,4 @@ async function teste()
     console.log(res);
 }
 
-teste();
+teste1();
