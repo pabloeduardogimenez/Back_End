@@ -28,7 +28,7 @@ function pesquisar()
 }
 function listar()
 {
-    
+    SELECT * FROM clientes ;
 }
 
 
