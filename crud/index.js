@@ -24,8 +24,17 @@ function Deletar()
 {
 
 }
-function pesquisar()
+
+export async function pesquisar(id)
 {
+    let sql = "SELECT * FROM clientes WHERE id ="+id;
+    const db = await open(
+      {
+          filename :"clientes.db",
+          driver : sqlite3.Database
+      });
+      return await db.get(sql);
+
 
 }
 /**
@@ -43,17 +52,7 @@ export async function listar()
         driver : sqlite3.Database
     });
     return await db.all(sql);
-    console,console.log(valores);
-    
-
 }
 
-async function teste(){
-
-    let res = await listar();
-    console.log(res);
-}
-
-teste();
 
 
