@@ -8,7 +8,27 @@
 // SQL -> relacional -> estruturado -> Mysql, sqlserver, oracle, postgres
 // NoSQL -> Monodb, redis, cassandra, dinamo
 
-const soma = require("./funcao"); // funcao.js
 
+function cadastrar() 
+{
+
+}
+
+function atulizar()
+{
+
+}
+function Deletar()
+{
+
+}
+function pesquisar()
+{
+
+}
+function listar()
+{
+    
+}
 
 
