@@ -17,7 +17,7 @@ teste();
 async function teste()
 {
 
-    let res = await Deletar(6);
+    let res = await Deletar(12);
     
     console.log(res);
 }
