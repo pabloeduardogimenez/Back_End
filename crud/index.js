@@ -58,7 +58,7 @@ export async function cadastrar(nome,email,cidade,telefone,idade)
  * @param {JSON} colunas 
  * @returns 
  */
-export async  function atulizar(id, colunas)
+export async  function atualizar(id, colunas)
 {
   /*  Object.keys(colunas.)*/
   let set = [];

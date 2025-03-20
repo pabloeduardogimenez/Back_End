@@ -1,4 +1,4 @@
-import { listar, pesquisar , cadastrar, Deletar, atulizar} from "./index.js";
+import { listar, pesquisar , cadastrar, Deletar, atualizar} from "./index.js";
 
 async function teste()
 {
@@ -6,7 +6,7 @@ async function teste()
         telefone: "(12) 21212-212",
         idade: 23
     }
-    let res = await atulizar(6,valores);
+    let res = await atualizar(6,valores);
     
     console.log(res);
 }
