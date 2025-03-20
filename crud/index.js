@@ -86,7 +86,7 @@ export async  function atualizar(id, colunas)
 
   const db = await conexao();
 
-  const returno = await db.run(sql , id);
+  const returno = await db.run(sql);
       
   return (returno.changes == 1)? true : false;
 }
@@ -112,13 +112,11 @@ export async function pesquisar(id)
     let sql = "SELECT * FROM clientes WHERE id ="+ id;
     const db = conexao();
       return await db.get(sql);
-
-
 }
 /**
  * 
  * @returns lista todos os clientes cadastrado ordenados pelo nome
- * @returns josn
+ * @returns json
  */
 
 export async function listar()
@@ -126,7 +124,7 @@ export async function listar()
   let sql = "SELECT * FROM clientes ORDER BY nome";
 
   const db = conexao();
-    return await db.all(sql);
+    return  (await db).all(sql);
 }
 
 
