@@ -42,6 +42,7 @@ export async function cadastrar(nome,email,cidade,telefone,idade)
         try {
           const db = await conexao();    
           let returno = await db.run(sql, nome, cidade, email, idade, telefone);
+            /*if (returno.changes == 1) {return true;} else {return false; }*/
           return (returno.changes ==1)? true : false;
 
         } catch (erro)
@@ -49,27 +50,60 @@ export async function cadastrar(nome,email,cidade,telefone,idade)
           console.log("erro na banco de dados")
           //console.log(erro);
           return false;
-        }
+        } 
+}
+/**
+ *  Alterar os dados de um clientes
+ * @param {number} id 
+ * @param {JSON} colunas 
+ * @returns 
+ */
+export async  function atulizar(id, colunas)
+{
+  /*  Object.keys(colunas.)*/
+  let set = [];
+
+  if (colunas.telefone ) {
+    set.push( "telefone = '" + colunas.telefone+ "'"); 
+  }
+  if (colunas.nome) {
+     set.push( "nome = '" + colunas.nome+"'"); 
+  }
+  if (colunas.idade) {
+    set.push( "idade = '" + colunas.idade + "'"); 
+  }
+  if (colunas.email) {
+  set.push( "email = '" + colunas.email + "'"); 
+  }
+  if (colunas.cidade) {
+
+  set.push( "cidade = '" + colunas.cidade + "'"); 
+  }
+  let sql = "UPDATE clientes "
+      + "SET " + set.join(" , ") +
+      " WHERE id = "+ id;
   
 
-    /*if (returno.changes == 1){
-      return true;
-    } 
-    else
-    {
-      return false;
-    }*/
-    
+  const db = await conexao();
 
-
+  const returno = await db.run(sql , id);
+      
+  return (returno.changes == 1)? true : false;
 }
-
-function atulizar()
+/**
+ * Deletar um clinte da tabela
+ * @param {number} id 
+ * @returns {boolean}
+ */
+export async  function Deletar(id)
 {
+  let sql = 'DELETE FROM clientes  WHERE id = ? '; 
 
-}
-function Deletar()
-{
+  const db = await conexao();
+
+  const returno = await db.run(sql , id);
+  
+  return (returno.changes == 1)? true : false;
 
 }
 

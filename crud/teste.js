@@ -1,9 +1,23 @@
-import { listar, pesquisar , cadastrar} from "./index.js";
+import { listar, pesquisar , cadastrar, Deletar, atulizar} from "./index.js";
 
 async function teste()
 {
+    let valores = {
+        telefone: "(12) 21212-212",
+        idade: 23
+    }
+    let res = await atulizar(6,valores);
+    
+    console.log(res);
+}
 
-    let res = await cadastrar("pablo", "aa", "Rio janeiro", "14-12258-2589",12);
+teste();
+
+/*
+async function teste()
+{
+
+    let res = await Deletar(6);
     
     console.log(res);
 }
@@ -19,4 +33,4 @@ async function teste1()
     console.log(res);
 }
 
-teste1();
+teste1();*/
