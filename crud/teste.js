@@ -1,4 +1,4 @@
-import { listar, pesquisar , cadastrar, Deletar, atualizar} from "./index.js";
+import { listar, pesquisar , cadastrar, Deletar, atualizar} from "./model/clientes.js";
 
 /*async function teste()
 {
