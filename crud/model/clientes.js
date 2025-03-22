@@ -46,9 +46,7 @@ export async function cadastrar(nome,email,cidade,telefone,idade)
           return (returno.changes ==1)? true : false;
 
         } catch (erro)
-        {
-          console.log("erro na banco de dados")
-          //console.log(erro);
+        {        
           return false;
         } 
 }
@@ -119,12 +117,12 @@ export async function pesquisar(id)
  * @returns json
  */
 
-export async function listar()
+export async function listar(coluna = "id")
 {
-  let sql = "SELECT * FROM clientes ORDER BY nome";
+  let sql = "SELECT * FROM clientes ORDER BY "+coluna+ " ASC";
 
-  const db = conexao();
-    return  (await db).all(sql);
+  const db = await conexao();
+    return  await db.all(sql);
 }
 
 

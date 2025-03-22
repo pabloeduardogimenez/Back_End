@@ -1,8 +1,6 @@
 //API
 // Interfase de Acesso Programatico
 
-
-
 import express from "express";
 import cors from "cors";
 
@@ -15,12 +13,20 @@ app.use(cors());
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-//action ou route 
-app.get("/clientes", async(req,res) => {
-    let dados = await listar();
-    res.json(dados);
 
-    res.send("clientes");
+// route -> action 
+app.get("/clientes", async (req, res) => {
+
+    let { coluna } = req.query;
+
+    try {   
+        let dados = await listar(coluna);
+        res.json(dados);
+    } catch (erro)
+    {
+        console.log(erro)
+        res.status("404").send("Coluna não existe no BD")
+    }
 });
 app.post("/clientes/novo", async (req,res)=>{
     let dados =req.body;

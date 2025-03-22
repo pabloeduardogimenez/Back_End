@@ -9,77 +9,94 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="cliente.js"></script>
 </head>
-<body>
-    
-    <div class="contaneir">
-        <h1>Clientes</h1>
-        <button class="btn btn-primary" 
-        data-bs-toggle="modal" 
-        data-bs-target="#form-cadastro">Cadastrar</button>
+<body>    
+      <div class="contaneir">
+            <h1>Clientes</h1>
+            <button class="btn btn-primary" 
+            data-bs-toggle="modal" 
+            data-bs-target="#form-cadastro">Cadastrar</button>
+            <table class="table table-striped">
+              <thead>
+                  <tr>
+                      <th><a href="#" coluna="id" ord="ASC" class="link-secondary ord">Id</a></th>
+                      <th><a href="#" coluna="nome" ord="ASC" class="link-primary ord">Nome</a></th>
+                      <th><a href="#" coluna="email" ord="ASC" class="link-primary ord">Email</a></th>
+                      <th><a href="#" coluna="telefone" ord="ASC" class="link-primary ord">Telefone</a></th>
+                      <th><a href="#" coluna="cidade" ord="ASC" class="link-primary ord">Cidade</a></th>
+                      <th><a href="#" coluna="idade" ord="ASC" class="link-primary ord">Idade</a></th>
+                  </tr>
+              </thead>
 
-        <table class="table table-striped">
-            <thead>
-                    <tr>
-                        <th>Id</th>
-                        <Th>Nome</Th>
-                        <th>E-mail</th>
-                        <th>Telefone</th>
-                        <th>cidade</th>
-                        <th>Idade</th>
-                    </tr>
-            </thead>
-            <Tbody>
-                <!--Model-->
-                <div class="modal" id="form-cadastra"tabindex="-1" role="dialog">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Novo Cliente</h1>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <div>
-                            <label class="form-label"> Nome</label>
-                            <input id="nome" class="form-control" type="text"/>
-                            <div class="invalid-feedback">
-                                O campo nome é obrigatório.
-                            </div>
-                          </div>
-                          <div>
-                            <label class="form-label"> Email</label>
-                            <input id="email" class="form-control" type="text"/>
-                            <div class="invalid-feedback">
-                                O campo nome é obrigatório.
-                            </div>
-                          </div>
-                          <div>
-                            <label class="form-label"> Telefone</label>
-                            <input id="telefone" class="form-control" type="text"/>
-                          </div>
-                          <div>
-                            <label class="form-label"> Cidade</label>
-                            <input id="cidade" class="form-control" type="text"/>
-                          </div>
-                          <div>
-                            <label class="form-label"> Idade</label>
-                            <input id="idade" class="form-control" type="number"/>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button id="bt-salvar" type="button" class="btn btn-primary">Salvar</button>
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        </div>
-                      </div>
-                    </div>
-                </div>
+              <tbody id="lista">
+                  
+              </tbody>
+          </table>
+      </div>
 
-            </Tbody>
-        </table>
+
+      <!-- Modal -->
+    <div class="modal fade" id="form-cadastro" tabindex="-1" >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Novo Cliente</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            
+              <div>
+                  <label class="form-label">Nome*</label>
+                  <input id="nome" class="form-control" type="text" />
+                  <div class="invalid-feedback">
+                      O campo nome é obrigatório
+                  </div>
+              </div>
+
+              <div>
+                  <label class="form-label">Email*</label>
+                  <input id="email" class="form-control" type="email" />
+                  <div class="invalid-feedback">
+                      O campo é obrigatório
+                  </div>
+              </div>
+
+              <div>
+                  <label class="form-label">Telefone</label>
+                  <input id="telefone" class="form-control" type="text" />
+              </div>
+
+              <div>
+                  <label class="form-label">Cidade</label>
+                  <input id="cidade" class="form-control" type="text" />
+              </div>
+
+              <div>
+                  <label class="form-label">Idade</label>
+                  <input id="idade" class="form-control" type="number" />
+              </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button id="bt-salvar" type="button" class="btn btn-primary">Salvar</button>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="toast-add" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          
+          <strong class="me-auto">Cadastro de Clientes</strong>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          O cliente foi cadastrado com sucesso.
+        </div>
+      </div>
+    </div>
 
-    
-</body>
+    </body>
 </html>
