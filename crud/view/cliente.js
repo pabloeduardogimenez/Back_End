@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     let backend = (location.hostname !== 'localhost')?
-    'https://backend-cadastro-qvtt.onrender.com':
+    'https://back-end-cadastro2.onrender.com':
     'http://localhost:3000';
 
     function listarClientes(coluna, ord){
