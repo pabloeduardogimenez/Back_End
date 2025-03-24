@@ -6,11 +6,10 @@ $(document).ready(function(){
             coluna,
             ord
         }
-        $.getJSON("http://localhost:3000/clientes", ord,function(dados){
+        $.getJSON("http://localhost:3000/clientes", dados,function(dados){
 
-
-
-            console.log(dados);        
+            $("#lista").empty();
+            //console.log(dados);        
             dados.forEach((item) => {
                 let html = '<tr>'                
                     +'<td>'+item.id+'</td>'  
@@ -83,10 +82,10 @@ $(document).ready(function(){
         }
 
     }); // fim do click
-    $("ord").click(function(){
+    $(".ord").click(function(){
         let coluna = $(this).attr("coluna");
         let ord = $(this).attr("ord");
-        ord (ord == "ASC") ? "DESC" : "ASC";
+        ord = (ord == "ASC") ? "DESC" : "ASC";
         $(this).attr("ord", ord);
        
 
