@@ -37,12 +37,12 @@ $(document).ready(function(){
         let temErro = false;
 
         $("input").removeClass('is-invalid');
-        if (nome.trin() == '')
+        if (nome.trim() == '')
         {
             $("#nome").addClass('is-invalid');
             temErro = true;
         }
-        if (nome.trin() == '')
+        if (email.trim() == '')
         {
             $("#email").addClass('is-invalid');
             temErro = true;
@@ -61,17 +61,21 @@ $(document).ready(function(){
 
                 if (retorno == true)
                 {
-                    $("#form-cadastro").model("hide");
+                    $("#form-cadastro").modal("hide");
                     let html = '<tr>'                
                     +'<td></td>'  
-                    +'<td>'+item.nome+'</td>'  
-                    +'<td>'+item.email+'</td>'  
-                    +'<td>'+item.telefone+'</td>'  
-                    +'<td>'+item.cidade+'</td>'  
-                    +'<td>'+item.idade+'</td>' 
+                    +'<td>'+dados.nome+'</td>'  
+                    +'<td>'+dados.email+'</td>'  
+                    +'<td>'+dados.telefone+'</td>'  
+                    +'<td>'+dados.cidade+'</td>'  
+                    +'<td>'+dados.idade+'</td>' 
                     +' </tr>' 
 
                     $("#lista").append(html); 
+
+                    $("#toast-add").toast('show');
+
+                    $("input").val("");
 
                     
                 }

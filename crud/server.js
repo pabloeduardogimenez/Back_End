@@ -5,6 +5,7 @@ import express from "express";
 import cors from "cors";
 
 
+
 import { listar, cadastrar} from "./model/clientes.js";
 
 const app = express();
@@ -30,7 +31,8 @@ app.get("/clientes", async (req, res) => {
 });
 app.post("/clientes/novo", async (req,res)=>{
     let dados =req.body;
-    let retorno = await cadastrar(dados.nome,
+    let retorno = await cadastrar(
+        dados.nome,
         dados.email,
         dados.cidade,
         dados.telefone,
@@ -40,5 +42,5 @@ app.post("/clientes/novo", async (req,res)=>{
 });
 //porta do servidor vai
 app.listen(3000, ()=>{
-    console.log("Servidor iniciado")
+    console.log("Servidor iniciado 1")
 });
