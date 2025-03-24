@@ -18,10 +18,10 @@ app.use(express.urlencoded({ extended: true }))
 // route -> action 
 app.get("/clientes", async (req, res) => {
 
-    let { coluna } = req.query;
+    let { coluna , ord} = req.query;
 
     try {   
-        let dados = await listar(coluna);
+        let dados = await listar(coluna, ord);
         res.json(dados);
     } catch (erro)
     {
