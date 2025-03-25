@@ -108,14 +108,18 @@ $(document).ready(function(){
     }); // fim do click link
     
     $("#lista").on('click','bt-del',function(){
-       let id = $(this).attr("codigo");
+      /*let id = $(this).attr("codigo");
+      console.log(id);*/
+      let dados = {
+        id: $(this).attr("codigo")   }
+
       
        $.post(backend + "/clientes/delete", dados, (retorno) => {
         if (retorno == true)
         {
             listarClientes();
         } 
-    });
+    }); 
 
 
     }); // fim do bt-del
