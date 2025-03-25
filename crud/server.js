@@ -47,9 +47,10 @@ app.post("/clientes/novo", async (req,res)=>{
 });
 //porta do servidor vai
 
-app.post("clientes/delete",async (req.res) => {
-    led {id} = req.body;
+app.post("clientes/delete", async (req,res) => {
+    let { id } = req.body;
     let retorno = await Deletar(id);
+    res.json(retorno);
 
 });
 

@@ -108,7 +108,7 @@ $(document).ready(function(){
     }); // fim do click link
     
     $("#lista").on('click','bt-del',function(){
-       let id= $(this).attr("codigo");
+       let id = $(this).attr("codigo");
 
 
     }); // fim do bt-del
