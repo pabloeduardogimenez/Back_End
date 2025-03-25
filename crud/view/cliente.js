@@ -23,9 +23,9 @@ $(document).ready(function(){
                     +'<td>'+item.cidade+'</td>'  
                     +'<td>'+item.idade+'</td>'
                     +'<td>'+
-                        '<buton class = "btn btn-danger">'+
+                        '<button class = "btn btn-danger">'+
                             '<i class="bi bi-x-circle"></i>'+
-                        '</buton> </td>'+ 
+                        '</button> </td>'+ 
                     +'</td>'
                +' </tr>' 
                 $("#lista").append(html); 
