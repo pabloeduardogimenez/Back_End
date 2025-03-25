@@ -21,7 +21,12 @@ $(document).ready(function(){
                     +'<td>'+item.email+'</td>'  
                     +'<td>'+item.telefone+'</td>'  
                     +'<td>'+item.cidade+'</td>'  
-                    +'<td>'+item.idade+'</td>' 
+                    +'<td>'+item.idade+'</td>'
+                    +'<td>'+
+                        '<buton class = "btn btn-danger">'+
+                            '<i class="bi bi-x-circle"></i>'+
+                        '</buton> </td>'+ 
+                    +'</td>'
                +' </tr>' 
                 $("#lista").append(html); 
             });    
@@ -101,5 +106,9 @@ $(document).ready(function(){
 
         listarClientes(coluna, ord);
     }); // fim do click link
+    
+    $("#lista").on('click', 'bt-del',function(){
+        console.log("delete");
+    }); // fim do bt-del
 
 });
