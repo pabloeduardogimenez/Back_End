@@ -23,7 +23,7 @@ $(document).ready(function(){
                     +'<td>'+item.cidade+'</td>'  
                     +'<td>'+item.idade+'</td>'
                     +'<td>'+
-                        '<button class = "btn btn-danger">'+
+                        '<button codigo='+ item.id + 'class = "btn btn-danger">'+
                             '<i class="bi bi-x-circle"></i>'+
                         '</button> </td>'+ 
                     +'</td>'
@@ -108,7 +108,9 @@ $(document).ready(function(){
     }); // fim do click link
     
     $("#lista").on('click','bt-del',function(){
-        console.log("delete");
+       let id= $(this).attr("codigo");
+
+
     }); // fim do bt-del
 
 });

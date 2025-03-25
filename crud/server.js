@@ -6,7 +6,7 @@ import cors from "cors";
 
 
 
-import { listar, cadastrar} from "./model/clientes.js";
+import { listar, cadastrar ,Deletar} from "./model/clientes.js";
 
 const app = express();
 
@@ -46,6 +46,13 @@ app.post("/clientes/novo", async (req,res)=>{
     res.json(retorno);
 });
 //porta do servidor vai
+
+app.post("clientes/delete",async (req.res) => {
+    led {id} = req.body;
+    let retorno = await Deletar(id);
+
+});
+
 
 app.listen(porta, ()=>{
     console.log("Servidor iniciado 1")
