@@ -124,6 +124,19 @@ export async function listar(coluna = "id", ordem = " ASC")
   const db = await conexao();
     return  await db.all(sql);
 }
+/**
+ * 
+ * @param {*} usuario 
+ * @param {*} senha 
+ */
+export async function logar(usuario, senha){
+  let sql = "SELECT * FROM usuario "
+          +"WHERE usuario = '"+ usuario + "'"
+          + "AND senha = '" + senha + "'";
+          const db = conexao();
+          return await db.get(sql);
+
+}
 
 
 

@@ -3,6 +3,7 @@
 
 import express from "express";
 import cors from "cors";
+import sha1 from "sha1";
 
 
 
@@ -51,6 +52,14 @@ app.post("clientes/delete", async (req,res) => {
     let { id } = req.body;
     let retorno = await Deletar(id);
     res.json(retorno);
+
+});
+
+app.post("login" , function(req, res)
+{
+    let {usuario, senha} = req.body;
+    let hash = sha1(senha)
+    res.json(hash);
 
 });
 
