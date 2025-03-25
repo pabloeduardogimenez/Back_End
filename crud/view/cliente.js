@@ -107,7 +107,7 @@ $(document).ready(function(){
         listarClientes(coluna, ord);
     }); // fim do click link
     
-    $("#lista").on('click', 'bt-del',function(){
+    $("#lista").on('click','bt-del',function(){
         console.log("delete");
     }); // fim do bt-del
 
