@@ -23,7 +23,7 @@ $(document).ready(function(){
                     +'<td>'+item.cidade+'</td>'  
                     +'<td>'+item.idade+'</td>'
                     +'<td>'+
-                        '<button codigo='+ item.id + 'class = "btn btn-danger">'+
+                        '<button codigo="'+ item.id + '" class = "bt-del btn btn-danger">'+
                             '<i class="bi bi-x-circle"></i>'+
                         '</button> </td>'+ 
                     +'</td>'
@@ -109,6 +109,13 @@ $(document).ready(function(){
     
     $("#lista").on('click','bt-del',function(){
        let id = $(this).attr("codigo");
+      
+       $.post(backend + "/clientes/delete", dados, (retorno) => {
+        if (retorno == true)
+        {
+            listarClientes();
+        } 
+    });
 
 
     }); // fim do bt-del
