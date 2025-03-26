@@ -7,7 +7,7 @@ import sha1 from "sha1";
 
 
 
-import { listar, cadastrar ,Deletar} from "./model/clientes.js";
+import { listar, cadastrar ,Deletar, logar} from "./model/clientes.js";
 
 const app = express();
 
@@ -55,12 +55,14 @@ app.post("clientes/delete", async (req,res) => {
 
 });
 
-app.post("login" , function(req, res)
+app.post("/login" , function(req, res)
 {
     let {usuario, senha} = req.body;
     let hash = sha1(senha)
+    let retorno =  logar(usuario, hash);
     res.json(hash);
-
+    retorno = (retorno) ? retorno : "false";
+    res.json = retorno;
 });
 
 

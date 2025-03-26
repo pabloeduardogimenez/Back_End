@@ -130,10 +130,10 @@ export async function listar(coluna = "id", ordem = " ASC")
  * @param {*} senha 
  */
 export async function logar(usuario, senha){
-  let sql = "SELECT * FROM usuario "
+  let sql = "SELECT * FROM usuarios "
           +"WHERE usuario = '"+ usuario + "'"
           + "AND senha = '" + senha + "'";
-          const db = conexao();
+          const db = await conexao();
           return await db.get(sql);
 
 }

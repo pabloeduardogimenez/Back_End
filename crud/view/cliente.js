@@ -1,3 +1,8 @@
+let usuario = sessionStorage.getItem("logado");
+if (!usuario){
+    location.assign("/login.html");
+}
+
 $(document).ready(function(){
 
     let backend = (location.hostname !== 'localhost')?
